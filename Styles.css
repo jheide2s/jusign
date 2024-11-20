@@ -1,17 +1,17 @@
-/* Reset some default styles */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Basic layout for the page */
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
 }
 
-/* Header and navigation */
+
 header {
     background-color: #333;
     color: #fff;
@@ -57,7 +57,7 @@ nav .search input {
     border-radius: 5px;
 }
 
-/* Main content */
+
 main {
     display: grid;
     place-items: center;
@@ -73,7 +73,7 @@ main {
     margin-bottom: 1rem;
 }
 
-/* Footer */
+
 footer {
     text-align: center;
     background-color: #333;
