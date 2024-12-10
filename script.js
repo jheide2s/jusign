@@ -2,8 +2,9 @@
 const player = document.getElementById('player');
 const obstacles = [document.getElementById('obstacle1'), document.getElementById('obstacle2')];
 const gameStatus = document.getElementById('gameStatus');
-const gameArea = document.getElementById('gameArea');
 const restartBtn = document.getElementById('restartBtn');
+const pauseBtn = document.getElementById('pauseBtn');
+const gameArea = document.getElementById('gameArea');
 
 // Spielfigur-Einstellungen
 const playerSpeed = 5;
@@ -21,10 +22,11 @@ let obstaclePositions = obstacles.map(obstacle => ({
 
 // Spielstatus
 let isGameOver = false;
+let isPaused = false; // Pause-Status
 
 // Event-Listener für die Steuerung des Spielers
 document.addEventListener('keydown', (e) => {
-    if (isGameOver) return; // Keine Eingaben, wenn das Spiel vorbei ist
+    if (isGameOver || isPaused) return; // Keine Eingaben, wenn das Spiel vorbei oder pausiert ist
 
     if (e.key === 'ArrowUp') playerY -= playerSpeed;
     if (e.key === 'ArrowDown') playerY += playerSpeed;
@@ -38,7 +40,7 @@ document.addEventListener('keydown', (e) => {
 
 // Spiellogik
 function gameLoop() {
-    if (isGameOver) return; // Spiel beenden, wenn es vorbei ist
+    if (isGameOver || isPaused) return; // Spiel anhalten, wenn es pausiert oder vorbei ist
 
     // Hindernisse bewegen
     obstaclePositions.forEach((position, index) => {
@@ -104,7 +106,21 @@ function restartGame() {
         obstacle.setAttribute('y', obstaclePositions[index].y);
     });
 
+    // Spiel erneut starten
     gameLoop();
 }
 
+// Pause und Fortsetzen des Spiels
+function togglePause() {
+    if (isPaused) {
+        isPaused = false;
+        pauseBtn.textContent = "Pause";
+        gameLoop(); // Spiel fortsetzen
+    } else {
+        isPaused = true;
+        pauseBtn.textContent = "Fortsetzen";
+    }
+}
+
+// Spiel starten
 gameLoop();
