@@ -27,11 +27,15 @@
             <p>Die Seite ist in Bearbeitung, wir arbeiten dran!</p>
             <div id="gameContainer">
                 <svg id="gameArea" width="600" height="400">
+                    <!-- Spieler (Kreis) -->
                     <circle id="player" cx="50" cy="200" r="20" fill="blue" />
+                    <!-- Hindernisse -->
                     <rect id="obstacle1" x="600" y="50" width="20" height="20" fill="red" />
                     <rect id="obstacle2" x="700" y="150" width="20" height="20" fill="red" />
                 </svg>
                 <p id="gameStatus">Spiel läuft...</p>
+                <!-- Neustart-Button, der nach dem Spiel erscheint -->
+                <button id="restartBtn" onclick="restartGame()">Neustart</button>
             </div>
         </div>
     </main>
