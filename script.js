@@ -1,31 +1,59 @@
-const searchInput = document.getElementById("searchInput");
-const resultContainer = document.createElement('div');
-document.body.appendChild(resultContainer);
+const player = document.getElementById('player');
+const obstacles = [document.getElementById('obstacle1'), document.getElementById('obstacle2')];
+const gameStatus = document.getElementById('gameStatus');
+const gameArea = document.getElementById('gameArea');
 
-fetch('terms.json')
-    .then(response => response.json())
-    .then(data => {
-        const terms = data.terms;
+const playerSpeed = 5;
+const obstacleSpeed = 2;
 
-        searchInput.addEventListener("input", () => {
-            const searchTerm = searchInput.value.toLowerCase();
+let playerX = parseInt(player.getAttribute('cx'));
+let playerY = parseInt(player.getAttribute('cy'));
 
-            console.log("Suche nach:", searchTerm);
+let obstaclePositions = obstacles.map(obstacle => ({
+    x: parseInt(obstacle.getAttribute('x')),
+    y: parseInt(obstacle.getAttribute('y'))
+}));
 
-            const filteredTerms = terms.filter(term => term.toLowerCase().includes(searchTerm));
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowUp') playerY -= playerSpeed;
+    if (e.key === 'ArrowDown') playerY += playerSpeed;
+    if (e.key === 'ArrowLeft') playerX -= playerSpeed;
+    if (e.key === 'ArrowRight') playerX += playerSpeed;
 
-            const mappedTerms = filteredTerms.map(term => term.toUpperCase());
+    player.setAttribute('cx', playerX);
+    player.setAttribute('cy', playerY);
+});
 
-            const count = mappedTerms.reduce((accumulator, currentValue) => accumulator + 1, 0);
+function gameLoop() {
+    obstaclePositions.forEach((position, index) => {
+        position.x -= obstacleSpeed;
+        if (position.x < -20) {
+            position.x = 600 + Math.random() * 100;
+            position.y = Math.random() * 380;
+        }
+        obstacles[index].setAttribute('x', position.x);
+        obstacles[index].setAttribute('y', position.y);
 
-            console.log("Gefundene Begriffe:", mappedTerms);
-            console.log("Anzahl der gefundenen Begriffe:", count);
-
-            resultContainer.innerHTML = mappedTerms.length > 0
-                ? `<p>Gefundene Begriffe: ${mappedTerms.join(', ')}</p>`
-                : "<p>Keine Ergebnisse gefunden.</p>";
-        });
-    })
-    .catch(error => {
-        console.error('Fehler beim Laden der JSON-Datei:', error);
+        if (checkCollision(playerX, playerY, position.x, position.y)) {
+            gameStatus.textContent = "Game Over!";
+            return;
+        }
     });
+
+    requestAnimationFrame(gameLoop);
+}
+
+function checkCollision(px, py, ox, oy) {
+    const playerRadius = 20;
+    const obstacleWidth = 20;
+    const obstacleHeight = 20;
+
+    if (px < ox + obstacleWidth && px + playerRadius > ox &&
+        py < oy + obstacleHeight && py + playerRadius > oy) {
+        return true;
+    }
+    return false;
+}
+
+gameLoop();
+
