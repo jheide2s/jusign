@@ -89,14 +89,21 @@ button:hover {
     background-color: #555;
 }
 
-footer {
-    text-align: center;
+/* Pause-Button oben rechts */
+#pauseBtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
     background-color: #333;
     color: white;
-    padding: 1rem;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#pauseBtn:hover {
+    background-color: #555;
 }
 
 /* Explosion-Animation */
