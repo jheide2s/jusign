@@ -25,15 +25,23 @@
         <div class="content">
             <h1>Willkommen bei Jusign</h1>
             <p>Die Seite ist in Bearbeitung, wir arbeiten dran!</p>
-            <div id="gameContainer">
+
+            <!-- Vorschau des Spiels als Thumbnail -->
+            <div id="gamePreviewContainer" style="display: block;">
+                <img id="gamePreview" src="2.png" alt="Spiel Vorschau" onclick="startGame()">
+                <p>Klicke auf das Bild, um das Spiel zu starten</p>
+            </div>
+
+            <!-- Der eigentliche Spielbereich (wird beim Klick angezeigt) -->
+            <div id="gameContainer" style="display: none;">
                 <svg id="gameArea" width="600" height="400">
-                    <!-- Spieler (Kreis) -->
                     <circle id="player" cx="50" cy="200" r="20" fill="blue" />
-                    <!-- Hindernisse -->
                     <rect id="obstacle1" x="600" y="50" width="20" height="20" fill="red" />
                     <rect id="obstacle2" x="700" y="150" width="20" height="20" fill="red" />
                 </svg>
                 <p id="gameStatus">Spiel läuft...</p>
+                <button id="pauseBtn" onclick="togglePause()">II</button>
+                <button id="minimizeBtn" onclick="minimizeGame()">_</button>
                 <button id="restartBtn" onclick="restartGame()">Neustart</button>
             </div>
         </div>
@@ -43,8 +51,6 @@
         <p>&copy; 2024 Jusign. Alle Rechte vorbehalten.</p>
     </footer>
 
-    <button id="pauseBtn" onclick="togglePause()">Pause</button>
-
-    <script src="script.js"></script>
+    <script src="game1.js"></script>
 </body>
 </html>
