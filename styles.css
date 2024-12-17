@@ -66,16 +66,36 @@ main {
     max-width: 800px;
 }
 
+#gamePreviewContainer {
+    text-align: center;
+}
+
+#gamePreview {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid #333;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+#gamePreview:hover {
+    transform: scale(1.05);
+}
+
 #gameContainer {
     position: relative;
     background-color: #eaeaea;
     border: 2px solid #333;
     margin-top: 20px;
+    width: 600px;
+    height: 400px;
+    display: none;
 }
 
 button {
-    display: none;
-    padding: 1rem 2rem;
+    padding: 0.5rem 1rem;
     font-size: 1rem;
     background-color: #333;
     color: white;
@@ -89,11 +109,12 @@ button:hover {
     background-color: #555;
 }
 
-#pauseBtn {
+/* Pause- und Minimieren-Buttons */
+#pauseBtn,
+#minimizeBtn {
     position: absolute;
-    top: 20px;
-    right: 20px;
-    padding: 10px 20px;
+    top: 10px;
+    padding: 8px 12px;
     background-color: #333;
     color: white;
     border: none;
@@ -101,7 +122,35 @@ button:hover {
     cursor: pointer;
 }
 
-#pauseBtn:hover {
+#pauseBtn {
+    left: 10px; /* Pause-Button links */
+}
+
+#minimizeBtn {
+    right: 10px; /* Minimieren-Button rechts */
+    font-size: 1.5rem;
+    padding: 8px 12px;
+    font-weight: bold;
+}
+
+/* Neustart-Button */
+#restartBtn {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none; /* Standardmäßig ausgeblendet */
+}
+
+#pauseBtn:hover,
+#minimizeBtn:hover,
+#restartBtn:hover {
     background-color: #555;
 }
 
