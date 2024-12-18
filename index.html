@@ -22,17 +22,13 @@
     </header>
 
     <main>
-        <div class="content">
-            <h1>Willkommen bei Jusign</h1>
-            <p>Die Seite ist in Bearbeitung, wir arbeiten dran!</p>
-
-            <!-- Vorschau des Spiels als Thumbnail -->
+    <div class="games-container">
+        <!-- Erstes Spiel -->
+        <div class="game-section">
             <div id="gamePreviewContainer" style="display: block;">
                 <img id="gamePreview" src="2.png" alt="Spiel Vorschau" onclick="startGame()">
-                <p>Klicke auf das Bild, um das Spiel zu starten</p>
+                <p>BlockEvade</p>
             </div>
-
-            <!-- Der eigentliche Spielbereich (wird beim Klick angezeigt) -->
             <div id="gameContainer" style="display: none;">
                 <svg id="gameArea" width="600" height="400">
                     <circle id="player" cx="50" cy="200" r="20" fill="blue" />
@@ -45,12 +41,31 @@
                 <button id="restartBtn" onclick="restartGame()">Neustart</button>
             </div>
         </div>
-    </main>
+
+        <!-- Zweites Spiel -->
+        <div class="game-section">
+    <div id="game2PreviewContainer" style="display: block;">
+        <img id="game2Preview" src="paddle_preview.png" alt="Paddle-Spiel Vorschau" onclick="startGame2()">
+        <p>Pinnball</p>
+    </div>
+    <div id="game2Container" style="display: none;">
+        <svg id="game2Area" width="600" height="400" style="border: 1px solid #333; background-color: #fafafa;">
+            <rect id="paddle" x="275" y="370" width="50" height="10" fill="blue"></rect>
+            <circle id="ball" cx="300" cy="200" r="10" fill="red"></circle>
+        </svg>
+        <p id="game2Status">Spiel läuft...</p>
+        <button id="pauseGame2Btn" onclick="togglePauseGame2()">II</button>
+        <button id="minimizeGame2Btn" onclick="minimizeGame2()">_</button>
+        <button id="restartGame2Btn" onclick="restartGame2()">Neustart</button>
+    </div>
+</div>
+    </div>
+</main>
 
     <footer>
         <p>&copy; 2024 Jusign. Alle Rechte vorbehalten.</p>
     </footer>
-
+    <script src="game2.js"></script>
     <script src="game1.js"></script>
 </body>
 </html>
