@@ -1,71 +1,152 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jusign</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hochzeits-Webseite</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">Jusign</div>
-            <ul class="menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">Über Uns</a></li>
-                <li><a href="contact.html">Kontakt</a></li>
-            </ul>
-            <div class="search">
-                <input type="text" id="searchInput" placeholder="Suche...">
-            </div>
-        </nav>
-    </header>
+<header>
+  <nav class="main-nav">
+    <ul>
+      <li><a href="#first-look">First Look</a></li>
+      <li><a href="#trauung">Trauung</a></li>
+      <li><a href="#gäste">Gäste</a></li>
+      <li><a href="#galerie">Galerie</a></li>
+    </ul>
+  </nav>
+</header>
 
-    <main>
-    <div class="games-container">
-        <!-- Erstes Spiel -->
-        <div class="game-section">
-            <div id="gamePreviewContainer" style="display: block;">
-                <img id="gamePreview" src="2.png" alt="Spiel Vorschau" onclick="startGame()">
-                <p>BlockEvade</p>
-            </div>
-            <div id="gameContainer" style="display: none;">
-                <svg id="gameArea" width="600" height="400">
-                    <circle id="player" cx="50" cy="200" r="20" fill="blue" />
-                    <rect id="obstacle1" x="600" y="50" width="20" height="20" fill="red" />
-                    <rect id="obstacle2" x="700" y="150" width="20" height="20" fill="red" />
-                </svg>
-                <p id="gameStatus">Spiel läuft...</p>
-                <button id="pauseBtn" onclick="togglePause()">II</button>
-                <button id="minimizeBtn" onclick="minimizeGame()">_</button>
-                <button id="restartBtn" onclick="restartGame()">Neustart</button>
-            </div>
-        </div>
+<main>
 
-        <!-- Zweites Spiel -->
-        <div class="game-section">
-    <div id="game2PreviewContainer" style="display: block;">
-        <img id="game2Preview" src="paddle_preview.png" alt="Paddle-Spiel Vorschau" onclick="startGame2()">
-        <p>Pinnball</p>
+<section id="first-look" class="section">
+  <h1 class="section-title">First Look</h1>
+  <div class="slideshow">
+    <div class="slides">
+      <div class="slide">
+        <div class="background" style="background-image: url('5.jpg');"></div>
+        <img src="5.jpg" alt="Bild 1">
+      </div>
+      <div class="slide">
+        <div class="background" style="background-image: url('6.jpg');"></div>
+        <img src="6.jpg" alt="Bild 2">
+      </div>
+      <div class="slide">
+        <div class="background" style="background-image: url('4.jpg');"></div>
+        <img src="4.jpg" alt="Bild 3">
+      </div>
+      <div class="slide">
+        <div class="background" style="background-image: url('3.jpg');"></div>
+        <img src="3.jpg" alt="Bild 4">
+      </div>
+      <div class="slide">
+        <div class="background" style="background-image: url('2.jpg');"></div>
+        <img src="2.jpg" alt="Bild 5">
+      </div>
     </div>
-    <div id="game2Container" style="display: none;">
-        <svg id="game2Area" width="600" height="400" style="border: 1px solid #333; background-color: #fafafa;">
-            <rect id="paddle" x="275" y="370" width="50" height="10" fill="blue"></rect>
-            <circle id="ball" cx="300" cy="200" r="10" fill="red"></circle>
-        </svg>
-        <p id="game2Status">Spiel läuft...</p>
-        <button id="pauseGame2Btn" onclick="togglePauseGame2()">II</button>
-        <button id="minimizeGame2Btn" onclick="minimizeGame2()">_</button>
-        <button id="restartGame2Btn" onclick="restartGame2()">Neustart</button>
+    <div class="navigation">
+      <span class="nav-dot" data-slide="0"></span>
+      <span class="nav-dot" data-slide="1"></span>
+      <span class="nav-dot" data-slide="2"></span>
+      <span class="nav-dot" data-slide="3"></span>
+      <span class="nav-dot" data-slide="4"></span>
     </div>
+  </div>
+</section>
+
+					
+<!-- Trauung -->
+<section id="trauung" class="bilderbuch">
+  <h1 class="section-title">Trauung</h1>
+  <div class="page shape-diagonal">
+    <img src="t2.jpg" alt="Trauung Bild 1" class="scale-down">
+    <p class="image-description">Trauversprechen</p>
+  </div>
+  <section id="Trauzeugen">
+<h1 class="undersection-title">Trauzeugen</h1>
+  <div class="trauzeugen-row">
+    <div class="trauzeuge">
+      <img src="zeugen3.jpg" alt="Trauzeuge 1">
+      <p>Oli und Mel</p>
+    </div>
+    <div class="trauzeuge">
+      <img src="zeugen1.jpg" alt="Trauzeuge 2">
+      <p>Willi und Emy</p>
+    </div>
+    <div class="trauzeuge">
+      <img src="zeugen2.jpg" alt="Trauzeuge 3">
+      <p>Alwin und Soso</p>
+    </div>
+  </div>
+</section>
+				<!-- Blumen- und Ringmädchen -->
+
+<section id="blumen-ringmaedchen" class="bilderbereich">
+  <h1 class="undersection-title">Blumen- und Ringmädchen</h1>
+  <div class="bild-gallery">
+    <div class="bild-item hover-effekt-1">
+      <img src="blume2.jpg" alt="Blumenmädchen 1">
+    </div>
+    <div class="bild-item hover-effekt-2">
+      <img src="blume1.jpg" alt="Blumenmädchen 1">
+    </div>
+    <div class="bild-item hover-effekt-2">
+      <img src="blume3.jpg" alt="Blumenmädchen 1">
+    </div>
+    <div class="bild-item hover-effekt-1">
+      <img src="ring1.jpg" alt="Ringmädchen 1">
+    </div>
+    <div class="bild-item hover-effekt-1">
+      <img src="ring2.jpg" alt="Ringmädchen 2">
+    </div>
+    <div class="bild-item hover-effekt-1">
+      <img src="ring3.jpg" alt="Ringmädchen 2">
+    </div>
+  </div>
+</section>
+
+
+
+
+  				<!-- BEREICH FÜR NACH TRAUZEUGEN -->
+<section id="Traugebet">
+<h1 class="undersection-title">Papas, Mamas und Brautpaar beim Gebet</h1>
+<div class="shape-polygonal-images">
+  <div class="polygon-image" style="background-image: url('eltern1.jpeg');"></div>
+  <div class="polygon-image" style="background-image: url('bild3.jpg');"></div>
+  <div class="polygon-image" style="background-image: url('eltern2.jpg');"></div>
 </div>
+</section>
+					<!-- Gäste-Bereich -->
+
+<section id="gäste">
+  <h1>Gäste</h1>
+  <div class="rotating-pattern">
+    <div class="rotating-square">
+      <p>Freude und Liebe</p>
     </div>
+    <div class="rotating-square">
+      <p>Gemeinsame Erinnerungen</p>
+    </div>
+  </div>
+</section>
+
+<!-- Galerie -->
+<section id="galerie" class="section">
+  <h1>Galerie</h1>
+  <div class="gallery-grid">
+    <!-- Dynamische Bilder -->
+  </div>
+</section>
+
 </main>
 
-    <footer>
-        <p>&copy; 2024 Jusign. Alle Rechte vorbehalten.</p>
-    </footer>
-    <script src="game2.js"></script>
-    <script src="game1.js"></script>
+<footer>
+  <p>© 2025 Hochzeit.</p>
+</footer>
+
+<script src="script.js"></script>
+<script src="slideshow.js"></script>
 </body>
 </html>
