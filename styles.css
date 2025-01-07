@@ -1,288 +1,446 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Hauptmenü */
+.main-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(90deg, #d4af37, #002147);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 10px 0;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
 }
 
+.main-nav li {
+  display: inline;
+}
+
+nav + .section-title {
+  margin-top: 0; /* Entfernt Abstand zwischen Menü und Überschrift */
+}
+
+.main-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 5px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main-nav a:hover {
+  background-color: #fefaf3; /* Weiß */
+  color: #002147; /* Dunkelblau */
+}
+
+/* Platzhalter für fixiertes Menü */
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem 0;
+  height: 40px;
+}
+/* Allgemeines */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fefaf3;
+  color: #333;
 }
 
-nav {
-    display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
-    align-items: center;
-    padding: 0 2rem;
+/* First Look */
+#first-look {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
 }
 
-nav .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+
+
+						/* ÜBERSCHRIFT für jede Sektion */
+
+.section-title {
+  font-family: 'Georgia', serif; /* Schöne, elegante Schriftart */
+  font-size: 2.5rem; /* Große Überschrift */
+  color: #d4af37; /* Goldene Farbe passend zum Thema */
+  text-align: center; /* Zentrierte Überschrift */
+  margin: 0; /* Kein zusätzlicher Abstand */
+  padding: 20px 0; /* Abstand oberhalb und unterhalb der Überschrift */
 }
 
-nav .menu {
-    display: flex;
-    justify-content: center;
-    list-style-type: none;
+.undersection-title {
+  font-family: 'Georgia', serif; /* Schöne, elegante Schriftart */
+  font-size: 2.5rem; /* Große Überschrift */
+  color: #B0C4DE; /* Goldene Farbe passend zum Thema */
+  text-align: center; /* Zentrierte Überschrift */
+  margin: 0; /* Kein zusätzlicher Abstand */
+  padding: 20px 0; /* Abstand oberhalb und unterhalb der Überschrift */
 }
 
-nav .menu li {
-    margin: 0 15px;
+
+								/* SLIDESHOW */
+.slideshow {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Volle Höhe des Viewports */
+  overflow: hidden; /* Verhindert das Überlaufen der Bilder */
 }
 
-nav .menu li a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.1rem;
+/* Container für jedes Bild */
+.slides {
+  display: flex; /* Bilder nebeneinander anordnen */
+  width: 500%; /* Breite der Slides ist 5 mal die Breite des Containers */
+  height: 100%;
+  transition: transform 1s ease-in-out;
 }
 
-nav .search {
-    text-align: right;
+/* Jedes Bild */
+.slides .slide {
+  position: relative;
+  width: 100%; /* Jedes Slide nimmt 100% der Containerbreite ein */
+  height: 100%;
 }
 
-nav .search input {
-    padding: 0.5rem;
-    font-size: 1rem;
-    border: none;
-    border-radius: 5px;
+.slides img {
+  width: 100%; /* Bild nimmt die ganze Breite des Containers ein */
+  height: 100%; /* Bild nimmt die ganze Höhe des Containers ein */
+  object-fit: contain; /* Bild bleibt im Container ohne Beschnitt */
+  position: relative;
+  z-index: 2; /* Das Bild bleibt immer im Vordergrund */
 }
 
-main {
-    display: grid;
-    place-items: center;
-    padding: 2rem;
+/* Unscharfer Hintergrund */
+.slides .background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover; /* Hintergrundbild wird auf den Container skaliert */
+  background-position: center; /* Hintergrund wird zentriert */
+  filter: blur(10px); /* Unschärfe-Effekt */
+  z-index: 1; /* Hintergrund bleibt hinter dem Bild */
 }
 
-.content {
-    text-align: center;
-    max-width: 800px;
+/* Navigation Dots */
+.navigation {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
 }
 
-#gamePreviewContainer {
-    text-align: center;
+.nav-dot {
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-#gamePreview {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-    cursor: pointer;
-    border: 2px solid #333;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
+.nav-dot.active {
+  background: rgba(212, 175, 55, 0.9); /* Gold */
 }
 
-#gamePreview:hover {
-    transform: scale(1.05);
+.nav-dot:hover {
+  background: #ffffff; /* Weiß */
 }
 
-#gameContainer {
-    position: relative;
-    background-color: #eaeaea;
-    border: 2px solid #333;
-    margin-top: 20px;
-    width: 600px;
-    height: 400px;
-    display: none;
+
+
+/* Galerie */
+#galerie .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  padding: 20px;
 }
 
-/* Vorschau für das zweite Spiel */
-#game2PreviewContainer {
-    text-align: center;
+
+
+						/* TRAUUNG */
+
+
+
+/* Jede Seite im Bilderbuch */
+.page {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Füllt die gesamte Höhe des Bildschirms */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
-#game2Preview {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-    cursor: pointer;
-    border: 2px solid #333;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
+/* Allgemeine Bild-Stile */
+.page img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Bild wird zugeschnitten, ohne verzerrt zu wirken */
+  z-index: 1; /* Bild liegt hinter dem Text */
 }
 
-#game2Preview:hover {
-    transform: scale(1.05);
+/* Beschreibungstext */
+.page p {
+  position: relative;
+  z-index: 2; /* Text liegt über dem Bild */
+  font-family: 'Georgia', serif;
+  font-size: 24px;
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8); /* Lesbarer Text auf Bildern */
+  padding: 10px 20px;
+  background: rgba(0, 0, 0, 0.5); /* Leichter schwarzer Hintergrund für Lesbarkeit */
+  border-radius: 10px;
 }
 
-/* Spielfeldbereich für das zweite Spiel */
-#game2Container {
-    position: relative;
-    background-color: #eaeaea;
-    border: 2px solid #333;
-    margin-top: 20px;
-    width: 600px;
-    height: 400px;
-    display: none;
+
+
+					/* ERSTES BILD IN TRAUUNG */
+				
+.shape-diagonal img {
+  width: 120%; /* Bild breiter machen */
+  object-fit: cover; /* Bild passt sich dem Container an */
+  left: -10%; /* Verschiebt das Bild, um die Breite auszugleichen */
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%); /* Beibehaltung der diagonalen Form */
 }
 
-/* Container für die Spiele */
-.games-container {
-    display: flex;           /* Flexbox für horizontale Anordnung */
-    gap: 2rem;               /* Abstand zwischen den Spielen */
-    justify-content: center; /* Zentriere die Spiele innerhalb des Containers */
-    margin: 2rem auto;       /* Abstand vom oberen Rand */
-    max-width: 1200px;       /* Maximalbreite für das Layout */
+.scale-down {
+  transform: scale(0.8); /* Skaliert das Bild herunter */
+  object-fit: contain;
 }
 
-/* Einzelne Spielsektionen */
-.game-section {
-    text-align: center;
-    flex: 1;                 /* Spiele nehmen gleichmäßig Platz ein */
+
+					/* BESCHREIBUNG FÜR ERSTES BILD IN TRAUUNG */
+
+.page:first-of-type p {
+  position: absolute;
+  bottom: 30px; /* Abstände vom unteren Rand */
+  right: 300px; /* Abstände vom rechten Rand */
+  background: rgba(0, 33, 71, 0.7); /* Dunkler transparenter Hintergrund */
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 24px;
+  font-family: 'Georgia', serif;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8); /* Textschatten für bessere Lesbarkeit */
 }
 
-/* Vorschau- und Spielfeldgröße anpassen */
-#gameContainer,
-#game2Container {
-    margin: 0 auto;          /* Zentriere die Spiele innerhalb der Sektion */
-    width: 600px;
-    height: 400px;
+
+
+					/* TRAUUNG*/
+
+#trauung {
+  background: linear-gradient(135deg, #f9f1e0, #e5f2ff);
+  padding: 50px 20px;
+  text-align: center;
 }
 
-#restartGame2Btn {
-    padding: 10px 20px;
-    background-color: #333;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-}
-#restartGame2Btn:hover {
-    background-color: #555;
+					/* BEREICH FÜR TRAUZEUGEN */
+.trauzeugen-row {
+  display: flex; /* Bilder nebeneinander anordnen */
+  gap: 0; /* Entfernt den Abstand zwischen den Bildern */
+  width: 100%; /* Füllt die gesamte Breite */
+  height: 100vh; /* Füllt die gesamte Höhe der Seite */
+  overflow: hidden; /* Überflüssiger Inhalt wird abgeschnitten */
+  margin-bottom: 50px;
 }
 
-#pauseGame2Btn,
-#minimizeGame2Btn {
-    position: absolute;
-    top: 10px;
-    padding: 8px 12px;
-    background-color: #333;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.trauzeuge {
+  flex: 1; /* Jedes Bild nimmt gleich viel Platz ein */
+  position: relative; /* Ermöglicht die Platzierung von Text */
 }
 
-#pauseGame2Btn {
-    left: 10px;
+.trauzeuge img {
+  width: 100%; /* Bild füllt den Container */
+  height: 100%; /* Bild füllt den Container */
+  object-fit: cover; /* Skaliert das Bild, um den Container zu füllen */
+  margin: 0; /* Entfernt eventuelle Ränder */
 }
 
-#minimizeGame2Btn {
-    right: 10px;
-    font-size: 1.5rem;
-    padding: 8px 12px;
-    font-weight: bold;
+.trauzeuge p {
+  position: absolute; /* Text wird über das Bild gelegt */
+  bottom: 10px; /* Am unteren Rand des Containers */
+  left: 50%; /* Zentriert */
+  transform: translateX(-50%); /* Korrektur für die Zentrierung */
+  background: rgba(0, 33, 71, 0.7); /* Dunkler, transparenter Hintergrund */
+  color: #fff; /* Weißer Text */
+  padding: 5px 10px; /* Innenabstand */
+  border-radius: 5px; /* Abgerundete Ecken */
+  font-size: 16px; /* Schriftgröße */
 }
 
-/* Neustart-Button (zentriert unten) */
-#restartGame2Btn {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 10px 20px;
-    background-color: #333;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    display: none; /* Standardmäßig ausgeblendet */
+						/* RING- UND BLUMENMÄDCHEN */
+
+.bilderbereich {
+  padding: 40px 0;
+  text-align: center;
 }
 
-/* Hover-Effekte für die Buttons */
-#pauseGame2Btn:hover,
-#minimizeGame2Btn:hover,
-#restartGame2Btn:hover {
-    background-color: #555;
+.bild-gallery {
+  display: grid;
+  grid-template-columns: repeat(5); /* 5 Spalten */
+  grid-template-rows: repeat(2); /* 2 Reihen, mit einer Höhe von 300px */
+  gap: 20px; /* Abstand zwischen den Bildern */
+  justify-items: center;
 }
 
-button {
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    background-color: #333;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
+.bild-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-button:hover {
-    background-color: #555;
+/* Erster Hover-Effekt */
+.bild-item.hover-effekt-1 img:hover {
+  transform: scale(1.1); /* Stärkere Vergrößerung */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-/* Pause- und Minimieren-Buttons */
-#pauseBtn,
-#minimizeBtn {
-    position: absolute;
-    top: 10px;
-    padding: 8px 12px;
-    background-color: #333;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+/* Zweiter Hover-Effekt */
+.bild-item.hover-effekt-2 img:hover {
+  transform: scale(1.8); /* Stärkere Vergrößerung */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-#pauseBtn {
-    left: 10px; /* Pause-Button links */
+h2 {
+  font-size: 2rem;
+  color: #4a4a4a;
+  margin-bottom: 20px;
 }
 
-#minimizeBtn {
-    right: 10px; /* Minimieren-Button rechts */
-    font-size: 1.5rem;
-    padding: 8px 12px;
-    font-weight: bold;
+/* Platzierung der Bilder im Grid */
+.bild-item:nth-child(1) {
+  grid-column: 1 / 2; /* Bild 1 in der ersten Spalte */
+  grid-row: 1 / 3;    /* Bild 1 in der ersten Reihe */
 }
 
-/* Neustart-Button */
-#restartBtn {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 10px 20px;
-    background-color: #333;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    display: none; /* Standardmäßig ausgeblendet */
+.bild-item:nth-child(2) {
+  grid-column: 2 / 3; /* Bild 2 in der zweiten Spalte */
+  grid-row: 1 / 2;    /* Bild 2 in der ersten Reihe */
 }
 
-#pauseBtn:hover,
-#minimizeBtn:hover,
-#restartBtn:hover {
-    background-color: #555;
+.bild-item:nth-child(3) {
+  grid-column: 2 / 3; /* Bild 3 in der dritten Spalte */
+  grid-row: 2 / 3;    /* Bild 3 in der ersten Reihe */
 }
 
-@keyframes explosion {
-    0% {
-        r: 20;
-        fill: blue;
-        opacity: 1;
-    }
-    50% {
-        r: 50;
-        fill: orange;
-        opacity: 0.7;
-    }
-    100% {
-        r: 70;
-        fill: red;
-        opacity: 0;
-    }
+.bild-item:nth-child(4) {
+  grid-column: 3 / 4; /* Bild 4 in der vierten Spalte */
+  grid-row: 1 / 3;    /* Bild 4 in der ersten Reihe */
 }
 
-.exploding {
-    animation: explosion 0.5s forwards;
+.bild-item:nth-child(5) {
+  grid-column: 4 / 5; /* Bild 5 in der fünften Spalte */
+  grid-row: 1 / 3;    /* Bild 5 in der ersten Reihe */
+}
+
+.bild-item:nth-child(6) {
+  grid-column: 5 / 6; /* Bild 6 in der ersten Spalte */
+  grid-row: 1 / 3;    /* Bild 6 in der zweiten Reihe */
+}
+
+
+
+	
+					/* Container für die polygonalen Bilder */
+/* Body bleibt unverändert */
+body {
+  margin: 0;
+  height: 100%;
+}
+
+/* Polygon-Bereich */
+.shape-polygonal-images {
+  position: relative;
+  width: 100%;
+  min-height: 600px; /* Mindesthöhe für den Polygon-Bereich */
+  overflow: hidden; /* Alles außerhalb des Bereichs ausblenden */
+  background: #eaeaea; /* Optional: Hintergrundfarbe */
+}
+
+.polygon-image {
+  position: absolute;
+  width: 100%;
+  height: 100%; /* Höhe auf den Container begrenzen */
+  background-size: cover;
+  background-position: center;
+  transition: clip-path 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.polygon-image:nth-child(1) {
+  clip-path: polygon(0 0, 30% 0, 0 100%, 0 100%);
+}
+
+.polygon-image:nth-child(2) {
+  clip-path: polygon(30% 0, 100% 0, 70% 100%, 0 100%);
+}
+
+.polygon-image:nth-child(3) {
+  clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 70% 100%);
+}
+
+.polygon-image:hover {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  transform: scale(1.05);
+  z-index: 4;
+}
+
+/* Gäste-Bereich */
+#gäste {
+  margin-top: 100px; /* Exakt die Höhe des Polygon-Teils */
+  padding: 50px 20px;
+  background: #fefaf3;
+}
+
+.rotating-pattern {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.rotating-square {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background-color: #002147;
+  color: #d4af37;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: rotate 6s linear infinite;
+  transform-origin: center;
+}
+
+/* Animation */
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
