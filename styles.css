@@ -409,38 +409,52 @@ body {
 }
 
 /* Gäste-Bereich */
+
+
 #gäste {
-  margin-top: 100px; /* Exakt die Höhe des Polygon-Teils */
-  padding: 50px 20px;
-  background: #fefaf3;
+  margin-top: 100px;
+  padding: 150px 150px;
+  background: white;
+  text-align: center;
 }
 
-.rotating-pattern {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
+.buch-container {
+  position: relative; /* Container für absolute Positionierung */
+  display: inline-block;
 }
 
-.rotating-square {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  background-color: #002147;
-  color: #d4af37;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: rotate 6s linear infinite;
-  transform-origin: center;
+.buch {
+  transform: scale(1.6);
+  width: 100%; /* Buch-Bild nimmt 100% des Containers ein */
+  height: auto;
 }
 
-/* Animation */
-@keyframes rotate {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+.bild-linke-seite, .bild-rechte-seite {
+  position: absolute; /* Positionierung relativ zum Container */
+  width: 40%; /* Die Größe der Bilder */
+  text-align: center;
+}
+
+.bild-linke-seite {
+  left: -2%; /* Position des linken Bildes */
+  top: 5%; /* Vertikal zentriert */
+  transform: scale(1.3);
+}
+
+.bild-rechte-seite {
+  right: -2%; /* Position des rechten Bildes */
+  top: 5%; /* Vertikal zentriert */
+  transform: scale(1.3);
+}
+
+.bild {
+  width: 100%; /* Bilder füllen den gesamten Container */
+  height: auto;
+}
+
+.name {
+  font-size: 20px; /* Schriftgröße für den Namen */
+  font-weight: bold; /* Fettschrift */
+  color: #333; /* Farbe des Namens */
+  margin-top: 10px; /* Abstand zwischen Bild und Name */
 }
