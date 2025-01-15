@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hochzeits-Webseite</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="gast" href="gaeste.css">
 </head>
 <body>
 <header>
@@ -121,13 +122,20 @@
 					<!-- Gäste-Bereich -->
 
 <section id="gäste">
-  <h1>Gäste</h1>
-  <div class="rotating-pattern">
-    <div class="rotating-square">
-      <p>Freude und Liebe</p>
+  <h1>Gästebuch</h1>
+  <div class="buch-container">
+    <img src="buch.jpg" alt="Gästebuch Bild" class="buch">
+    
+    					<!-- Linkes Bild mit Name -->
+    <div class="bild-linke-seite">
+      <img src="2.jpg" alt="Bild links" class="bild">
+      <p class="name">Name des linken Bildes</p>
     </div>
-    <div class="rotating-square">
-      <p>Gemeinsame Erinnerungen</p>
+    
+   					 <!-- Rechtes Bild mit Name -->
+    <div class="bild-rechte-seite">
+      <img src="2.jpg" alt="Bild rechts" class="bild">
+      <p class="name">Name des rechten Bildes</p>
     </div>
   </div>
 </section>
@@ -148,5 +156,6 @@
 
 <script src="script.js"></script>
 <script src="slideshow.js"></script>
+<script src="blaettern.js"></script>
 </body>
 </html>
