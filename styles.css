@@ -419,42 +419,42 @@ body {
 }
 
 .buch-container {
-  position: relative; /* Container für absolute Positionierung */
+  position: relative; 
   display: inline-block;
 }
 
 .buch {
   transform: scale(1.6);
-  width: 100%; /* Buch-Bild nimmt 100% des Containers ein */
+  width: 100%; 
   height: auto;
 }
 
 .bild-linke-seite, .bild-rechte-seite {
-  position: absolute; /* Positionierung relativ zum Container */
-  width: 40%; /* Die Größe der Bilder */
+  position: absolute;
+  width: 40%; 
   text-align: center;
 }
 
 .bild-linke-seite {
-  left: -2%; /* Position des linken Bildes */
-  top: 5%; /* Vertikal zentriert */
+  left: -2%; 
+  top: 5%;
   transform: scale(1.3);
 }
 
 .bild-rechte-seite {
-  right: -2%; /* Position des rechten Bildes */
-  top: 5%; /* Vertikal zentriert */
+  right: -2%; 
+  top: 5%; 
   transform: scale(1.3);
 }
 
 .bild {
-  width: 100%; /* Bilder füllen den gesamten Container */
+  width: 100%; 
   height: auto;
 }
 
 .name {
-  font-size: 20px; /* Schriftgröße für den Namen */
-  font-weight: bold; /* Fettschrift */
-  color: #333; /* Farbe des Namens */
-  margin-top: 10px; /* Abstand zwischen Bild und Name */
+  font-size: 20px; 
+  font-weight: bold;
+  color: #333;
+  margin-top: 10px;
 }
