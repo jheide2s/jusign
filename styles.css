@@ -26,7 +26,7 @@
 }
 
 nav + .section-title {
-  margin-top: 0; /* Entfernt Abstand zwischen Menü und Überschrift */
+  margin-top: 0; 
 }
 
 .main-nav a {
@@ -40,15 +40,15 @@ nav + .section-title {
 }
 
 .main-nav a:hover {
-  background-color: #fefaf3; /* Weiß */
-  color: #002147; /* Dunkelblau */
+  background-color: #fefaf3; 
+  color: #002147; 
 }
 
-/* Platzhalter für fixiertes Menü */
+
 header {
   height: 40px;
 }
-/* Allgemeines */
+
 body {
   font-family: 'Arial', sans-serif;
   margin: 0;
@@ -74,21 +74,21 @@ body {
 						/* ÜBERSCHRIFT für jede Sektion */
 
 .section-title {
-  font-family: 'Georgia', serif; /* Schöne, elegante Schriftart */
-  font-size: 2.5rem; /* Große Überschrift */
-  color: #d4af37; /* Goldene Farbe passend zum Thema */
-  text-align: center; /* Zentrierte Überschrift */
-  margin: 0; /* Kein zusätzlicher Abstand */
-  padding: 20px 0; /* Abstand oberhalb und unterhalb der Überschrift */
+  font-family: 'Georgia', serif; 
+  font-size: 2.5rem;
+  color: #d4af37; 
+  text-align: center; 
+  margin: 0; 
+  padding: 20px 0; 
 }
 
 .undersection-title {
-  font-family: 'Georgia', serif; /* Schöne, elegante Schriftart */
-  font-size: 2.5rem; /* Große Überschrift */
-  color: #B0C4DE; /* Goldene Farbe passend zum Thema */
-  text-align: center; /* Zentrierte Überschrift */
-  margin: 0; /* Kein zusätzlicher Abstand */
-  padding: 20px 0; /* Abstand oberhalb und unterhalb der Überschrift */
+  font-family: 'Georgia', serif; 
+  font-size: 2.5rem; 
+  color: #B0C4DE; 
+  text-align: center; 
+  margin: 0; 
+  padding: 20px 0;
 }
 
 
@@ -96,31 +96,31 @@ body {
 .slideshow {
   position: relative;
   width: 100%;
-  height: 100vh; /* Volle Höhe des Viewports */
-  overflow: hidden; /* Verhindert das Überlaufen der Bilder */
+  height: 100vh; 
+  overflow: hidden; 
 }
 
-/* Container für jedes Bild */
+
 .slides {
-  display: flex; /* Bilder nebeneinander anordnen */
-  width: 500%; /* Breite der Slides ist 5 mal die Breite des Containers */
+  display: flex; 
+  width: 500%;
   height: 100%;
   transition: transform 1s ease-in-out;
 }
 
-/* Jedes Bild */
+
 .slides .slide {
   position: relative;
-  width: 100%; /* Jedes Slide nimmt 100% der Containerbreite ein */
+  width: 100%; 
   height: 100%;
 }
 
 .slides img {
-  width: 100%; /* Bild nimmt die ganze Breite des Containers ein */
-  height: 100%; /* Bild nimmt die ganze Höhe des Containers ein */
-  object-fit: contain; /* Bild bleibt im Container ohne Beschnitt */
+  width: 100%; 
+  height: 100%; 
+  object-fit: contain;
   position: relative;
-  z-index: 2; /* Das Bild bleibt immer im Vordergrund */
+  z-index: 2; 
 }
 
 /* Unscharfer Hintergrund */
@@ -130,10 +130,10 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-size: cover; /* Hintergrundbild wird auf den Container skaliert */
-  background-position: center; /* Hintergrund wird zentriert */
-  filter: blur(10px); /* Unschärfe-Effekt */
-  z-index: 1; /* Hintergrund bleibt hinter dem Bild */
+  background-size: cover; 
+  background-position: center; 
+  filter: blur(10px); 
+  z-index: 1; 
 }
 
 /* Navigation Dots */
@@ -156,11 +156,11 @@ body {
 }
 
 .nav-dot.active {
-  background: rgba(212, 175, 55, 0.9); /* Gold */
+  background: rgba(212, 175, 55, 0.9); 
 }
 
 .nav-dot:hover {
-  background: #ffffff; /* Weiß */
+  background: #ffffff; 
 }
 
 
@@ -179,38 +179,38 @@ body {
 
 
 
-/* Jede Seite im Bilderbuch */
+
 .page {
   position: relative;
   width: 100%;
-  height: 100vh; /* Füllt die gesamte Höhe des Bildschirms */
+  height: 100vh; 
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
 }
 
-/* Allgemeine Bild-Stile */
+
 .page img {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Bild wird zugeschnitten, ohne verzerrt zu wirken */
-  z-index: 1; /* Bild liegt hinter dem Text */
+  object-fit: cover; 
+  z-index: 1; 
 }
 
-/* Beschreibungstext */
+
 .page p {
   position: relative;
-  z-index: 2; /* Text liegt über dem Bild */
+  z-index: 2; 
   font-family: 'Georgia', serif;
   font-size: 24px;
   color: #fff;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8); /* Lesbarer Text auf Bildern */
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8); 
   padding: 10px 20px;
-  background: rgba(0, 0, 0, 0.5); /* Leichter schwarzer Hintergrund für Lesbarkeit */
+  background: rgba(0, 0, 0, 0.5); 
   border-radius: 10px;
 }
 
@@ -219,14 +219,14 @@ body {
 					/* ERSTES BILD IN TRAUUNG */
 				
 .shape-diagonal img {
-  width: 120%; /* Bild breiter machen */
-  object-fit: cover; /* Bild passt sich dem Container an */
-  left: -10%; /* Verschiebt das Bild, um die Breite auszugleichen */
-  clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%); /* Beibehaltung der diagonalen Form */
+  width: 120%; 
+  object-fit: cover; 
+  left: -10%; 
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%); 
 }
 
 .scale-down {
-  transform: scale(0.8); /* Skaliert das Bild herunter */
+  transform: scale(0.8);
   object-fit: contain;
 }
 
@@ -235,15 +235,15 @@ body {
 
 .page:first-of-type p {
   position: absolute;
-  bottom: 30px; /* Abstände vom unteren Rand */
-  right: 300px; /* Abstände vom rechten Rand */
-  background: rgba(0, 33, 71, 0.7); /* Dunkler transparenter Hintergrund */
+  bottom: 30px; 
+  right: 300px;
+  background: rgba(0, 33, 71, 0.7); 
   color: #fff;
   padding: 10px 20px;
   border-radius: 10px;
   font-size: 24px;
   font-family: 'Georgia', serif;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8); /* Textschatten für bessere Lesbarkeit */
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8); 
 }
 
 
@@ -258,36 +258,36 @@ body {
 
 					/* BEREICH FÜR TRAUZEUGEN */
 .trauzeugen-row {
-  display: flex; /* Bilder nebeneinander anordnen */
-  gap: 0; /* Entfernt den Abstand zwischen den Bildern */
-  width: 100%; /* Füllt die gesamte Breite */
-  height: 100vh; /* Füllt die gesamte Höhe der Seite */
-  overflow: hidden; /* Überflüssiger Inhalt wird abgeschnitten */
+  display: flex; 
+  gap: 0; 
+  width: 100%; 
+  height: 100vh;
+  overflow: hidden; 
   margin-bottom: 50px;
 }
 
 .trauzeuge {
-  flex: 1; /* Jedes Bild nimmt gleich viel Platz ein */
-  position: relative; /* Ermöglicht die Platzierung von Text */
+  flex: 1; 
+  position: relative; 
 }
 
 .trauzeuge img {
-  width: 100%; /* Bild füllt den Container */
-  height: 100%; /* Bild füllt den Container */
-  object-fit: cover; /* Skaliert das Bild, um den Container zu füllen */
-  margin: 0; /* Entfernt eventuelle Ränder */
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  margin: 0; 
 }
 
 .trauzeuge p {
-  position: absolute; /* Text wird über das Bild gelegt */
-  bottom: 10px; /* Am unteren Rand des Containers */
-  left: 50%; /* Zentriert */
-  transform: translateX(-50%); /* Korrektur für die Zentrierung */
-  background: rgba(0, 33, 71, 0.7); /* Dunkler, transparenter Hintergrund */
-  color: #fff; /* Weißer Text */
-  padding: 5px 10px; /* Innenabstand */
-  border-radius: 5px; /* Abgerundete Ecken */
-  font-size: 16px; /* Schriftgröße */
+  position: absolute; 
+  bottom: 10px; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  background: rgba(0, 33, 71, 0.7); 
+  color: #fff; 
+  padding: 5px 10px; 
+  border-radius: 5px; 
+  font-size: 16px; 
 }
 
 						/* RING- UND BLUMENMÄDCHEN */
@@ -299,9 +299,9 @@ body {
 
 .bild-gallery {
   display: grid;
-  grid-template-columns: repeat(5); /* 5 Spalten */
-  grid-template-rows: repeat(2); /* 2 Reihen, mit einer Höhe von 300px */
-  gap: 20px; /* Abstand zwischen den Bildern */
+  grid-template-columns: repeat(5); 
+  grid-template-rows: repeat(2); 
+  gap: 20px;
   justify-items: center;
 }
 
@@ -315,13 +315,13 @@ body {
 
 /* Erster Hover-Effekt */
 .bild-item.hover-effekt-1 img:hover {
-  transform: scale(1.1); /* Stärkere Vergrößerung */
+  transform: scale(1.1); 
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 /* Zweiter Hover-Effekt */
 .bild-item.hover-effekt-2 img:hover {
-  transform: scale(1.8); /* Stärkere Vergrößerung */
+  transform: scale(1.8); 
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
@@ -333,58 +333,58 @@ h2 {
 
 /* Platzierung der Bilder im Grid */
 .bild-item:nth-child(1) {
-  grid-column: 1 / 2; /* Bild 1 in der ersten Spalte */
-  grid-row: 1 / 3;    /* Bild 1 in der ersten Reihe */
+  grid-column: 1 / 2; 
+  grid-row: 1 / 3;  
 }
 
 .bild-item:nth-child(2) {
-  grid-column: 2 / 3; /* Bild 2 in der zweiten Spalte */
-  grid-row: 1 / 2;    /* Bild 2 in der ersten Reihe */
+  grid-column: 2 / 3; 
+  grid-row: 1 / 2;   
 }
 
 .bild-item:nth-child(3) {
-  grid-column: 2 / 3; /* Bild 3 in der dritten Spalte */
-  grid-row: 2 / 3;    /* Bild 3 in der ersten Reihe */
+  grid-column: 2 / 3; 
+  grid-row: 2 / 3;   
 }
 
 .bild-item:nth-child(4) {
-  grid-column: 3 / 4; /* Bild 4 in der vierten Spalte */
-  grid-row: 1 / 3;    /* Bild 4 in der ersten Reihe */
+  grid-column: 3 / 4; 
+  grid-row: 1 / 3;   
 }
 
 .bild-item:nth-child(5) {
-  grid-column: 4 / 5; /* Bild 5 in der fünften Spalte */
-  grid-row: 1 / 3;    /* Bild 5 in der ersten Reihe */
+  grid-column: 4 / 5; 
+  grid-row: 1 / 3;    
 }
 
 .bild-item:nth-child(6) {
-  grid-column: 5 / 6; /* Bild 6 in der ersten Spalte */
-  grid-row: 1 / 3;    /* Bild 6 in der zweiten Reihe */
+  grid-column: 5 / 6; 
+  grid-row: 1 / 3;   
 }
 
 
 
 	
 					/* Container für die polygonalen Bilder */
-/* Body bleibt unverändert */
+
 body {
   margin: 0;
   height: 100%;
 }
 
-/* Polygon-Bereich */
+						/* Polygon-Bereich */
 .shape-polygonal-images {
   position: relative;
   width: 100%;
-  min-height: 600px; /* Mindesthöhe für den Polygon-Bereich */
-  overflow: hidden; /* Alles außerhalb des Bereichs ausblenden */
-  background: #eaeaea; /* Optional: Hintergrundfarbe */
+  min-height: 600px;
+  overflow: hidden;
+  background: #eaeaea; 
 }
 
 .polygon-image {
   position: absolute;
   width: 100%;
-  height: 100%; /* Höhe auf den Container begrenzen */
+  height: 100%; 
   background-size: cover;
   background-position: center;
   transition: clip-path 0.5s ease-in-out, transform 0.5s ease-in-out;
@@ -408,7 +408,7 @@ body {
   z-index: 4;
 }
 
-/* Gäste-Bereich */
+						/* Gäste-Bereich */
 
 
 #gäste {
@@ -419,31 +419,31 @@ body {
 }
 
 .buch-container {
-  position: relative; 
+  position: relative;
   display: inline-block;
 }
 
 .buch {
   transform: scale(1.6);
-  width: 100%; 
+  width: 100%;
   height: auto;
 }
 
 .bild-linke-seite, .bild-rechte-seite {
   position: absolute;
-  width: 40%; 
+  width: 40%;
   text-align: center;
 }
 
 .bild-linke-seite {
-  left: -2%; 
+  left: -2%;
   top: 5%;
   transform: scale(1.3);
 }
 
 .bild-rechte-seite {
-  right: -2%; 
-  top: 5%; 
+  right: -2%;
+  top: 5%;
   transform: scale(1.3);
 }
 
@@ -453,8 +453,36 @@ body {
 }
 
 .name {
-  font-size: 20px; 
-  font-weight: bold;
-  color: #333;
-  margin-top: 10px;
+  font-size: 20px;
+  font-weight: bold; 
+  color: #333; 
+  margin-top: 10px; 
+}
+
+.blättern {
+  position: absolute;
+  top: 50%; 
+  transform: translateY(-50%);
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 10; 
+}
+
+.blättern:hover {
+  background-color: #555;
+}
+
+.zurück {
+  right: -194px;
+  top: 40%;
+}
+
+.weiter {
+  right: -194px;
 }
