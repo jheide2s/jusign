@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hochzeits-Webseite</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav class="main-nav" aria-label="Hauptnavigation">
+      <ul>
+        <li><a href="#first-look">First Look</a></li>
+        <li><a href="#trauung">Trauung</a></li>
+        <li><a href="#gäste">Gäste</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- First Look Section -->
+    <section id="first-look" class="section" aria-labelledby="first-look-heading">
+      <h1 id="first-look-heading" class="section-title">First Look</h1>
+      <div class="slideshow">
+        <div class="slides">
+          <figure class="slide">
+            <div class="background" style="background-image: url('bilder/5.jpg');"></div>
+            <img src="bilder/5.jpg" alt="Bild 1">
+            <figcaption>Bild 1 Beschreibung</figcaption>
+          </figure>
+          <figure class="slide">
+            <div class="background" style="background-image: url('bilder/6.jpg');"></div>
+            <img src="bilder/6.jpg" alt="Bild 2">
+            <figcaption>Bild 2 Beschreibung</figcaption>
+          </figure>
+          <figure class="slide">
+            <div class="background" style="background-image: url('bilder/4.jpg');"></div>
+            <img src="bilder/4.jpg" alt="Bild 3">
+            <figcaption>Bild 3 Beschreibung</figcaption>
+          </figure>
+          <figure class="slide">
+            <div class="background" style="background-image: url('bilder/3.jpg');"></div>
+            <img src="bilder/3.jpg" alt="Bild 4">
+            <figcaption>Bild 4 Beschreibung</figcaption>
+          </figure>
+          <figure class="slide">
+            <div class="background" style="background-image: url('bilder/2.jpg');"></div>
+            <img src="bilder/2.jpg" alt="Bild 5">
+            <figcaption>Bild 5 Beschreibung</figcaption>
+          </figure>
+        </div>
+        <div class="navigation" aria-label="Slideshow Navigation">
+          <span class="nav-dot" data-slide="0" aria-label="Slide 1"></span>
+          <span class="nav-dot" data-slide="1" aria-label="Slide 2"></span>
+          <span class="nav-dot" data-slide="2" aria-label="Slide 3"></span>
+          <span class="nav-dot" data-slide="3" aria-label="Slide 4"></span>
+          <span class="nav-dot" data-slide="4" aria-label="Slide 5"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trauung Section -->
+    <section id="trauung" class="bilderbuch" aria-labelledby="trauung-heading">
+      <h1 id="trauung-heading" class="section-title">Trauung</h1>
+      <article class="page shape-diagonal">
+        <img src="bilder/t2.jpg" alt="Trauung Bild 1" class="scale-down">
+        <p class="image-description">Trauversprechen</p>
+      </article>
+
+      <!-- Trauzeugen Subsection -->
+      <section id="Trauzeugen" aria-labelledby="trauzeugen-heading">
+        <h2 id="trauzeugen-heading" class="undersection-title">Trauzeugen</h2>
+        <div class="trauzeugen-row">
+          <figure class="trauzeuge">
+            <img src="bilder/zeugen3.jpg" alt="Trauzeuge 1">
+            <figcaption>Oli und Mel</figcaption>
+          </figure>
+          <figure class="trauzeuge">
+            <img src="bilder/zeugen1.jpg" alt="Trauzeuge 2">
+            <figcaption>Willi und Emy</figcaption>
+          </figure>
+          <figure class="trauzeuge">
+            <img src="bilder/zeugen2.jpg" alt="Trauzeuge 3">
+            <figcaption>Alwin und Soso</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- Blumen- und Ringmädchen Subsection -->
+      <section id="blumen-ringmaedchen" class="bilderbereich" aria-labelledby="blumen-ringmaedchen-heading">
+        <h2 id="blumen-ringmaedchen-heading" class="undersection-title">Blumen- und Ringmädchen</h2>
+        <div class="bild-gallery">
+          <figure class="bild-item hover-effekt-1">
+            <img src="bilder/blume2.jpg" alt="Blumenmädchen 1">
+          </figure>
+          <figure class="bild-item hover-effekt-2">
+            <img src="bilder/blume1.jpg" alt="Blumenmädchen 2">
+          </figure>
+          <figure class="bild-item hover-effekt-2">
+            <img src="bilder/blume3.jpg" alt="Blumenmädchen 3">
+          </figure>
+          <figure class="bild-item hover-effekt-1">
+            <img src="bilder/ring1.jpg" alt="Ringmädchen 1">
+          </figure>
+          <figure class="bild-item hover-effekt-1">
+            <img src="bilder/ring2.jpg" alt="Ringmädchen 2">
+          </figure>
+          <figure class="bild-item hover-effekt-1">
+            <img src="bilder/ring3.jpg" alt="Ringmädchen 3">
+          </figure>
+        </div>
+      </section>
+
+      <!-- Gebet Section -->
+      <section id="Traugebet" aria-labelledby="traugebet-heading">
+        <h2 id="traugebet-heading" class="undersection-title">Papas, Mamas und Brautpaar beim Gebet</h2>
+        <div class="shape-polygonal-images">
+          <figure class="polygon-image" style="background-image: url('bilder/eltern1.jpeg');">
+          </figure>
+          <figure class="polygon-image" style="background-image: url('bilder/bild3.jpg');">
+          </figure>
+          <figure class="polygon-image" style="background-image: url('bilder/eltern2.jpg');">
+          </figure>
+        </div>
+      </section>
+    </section>
+
+    <!-- Gäste Section -->
+    <section id="gäste" aria-labelledby="gäste-heading">
+      <h1 id="gäste-heading">Gästebuch</h1>
+      <div class="buch-container">
+        <img src="bilder/buch.jpg" alt="Gästebuch Bild" class="buch">
+        <figure class="bild-linke-seite">
+          <img src="bilder/2.jpg" alt="Bild links" class="bild">
+          <figcaption class="name">Name des linken Bildes</figcaption>
+        </figure>
+        <figure class="bild-rechte-seite">
+          <img src="bilder/2.jpg" alt="Bild rechts" class="bild">
+          <figcaption class="name">Name des rechten Bildes</figcaption>
+        </figure>
+        <button class="blättern zurück" aria-label="Zurück blättern">
+  	 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    	    <path d="M19 12H5M12 19l-7-7 7-7"/>
+  	 </svg>
+	</button>
+	<button class="blättern weiter" aria-label="Weiter blättern">
+  	 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    	    <path d="M5 12h14M12 5l7 7-7 7"/>
+  	 </svg>
+	</button>
+      </div>
+    </section>
+
+  <footer>
+    <p>© 2025 Hochzeit.</p>
+  </footer>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
